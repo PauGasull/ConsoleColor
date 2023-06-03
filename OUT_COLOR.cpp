@@ -1,7 +1,6 @@
 #include "OUT_COLOR.h"
 
-OUT_COLOR::OUT_COLOR(HANDLE& console, int& color_var)
-{
+OUT_COLOR::OUT_COLOR(HANDLE& console, int& color_var) {
 	hConsole = console = GetStdHandle(STD_OUTPUT_HANDLE);
 	text_color = color_var = 15;
 
@@ -9,14 +8,13 @@ OUT_COLOR::OUT_COLOR(HANDLE& console, int& color_var)
 	SetConsoleTextAttribute(hConsole, color_var);
 }
 
-OUT_COLOR::OUT_COLOR()
-{
+OUT_COLOR::OUT_COLOR() {
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	text_color = 15;
 	SetConsoleTextAttribute(hConsole, text_color);
 }
 
-void OUT_COLOR::black(){	
+void OUT_COLOR::black() {	
 	SetConsoleTextAttribute(hConsole, 0);
 }
 void OUT_COLOR::dark_blue() {
